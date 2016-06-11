@@ -94,18 +94,6 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('petProfilesCtrl', function ($scope) {
-    $scope.isExpanded = true;
-    $scope.petProfiles = [
-    { title: 'Fido', id: 1 },
-    { title: 'Sammy', id: 2 },
-    { title: 'Kodiak', id: 3 },
-    { title: 'Dexter', id: 4 },
-    { title: 'Honey', id: 5 },
-    { title: 'Hazel', id: 6 }
-  ];
-})
-
 .controller('LoginCtrl', function ($scope, $timeout, $stateParams, ionicMaterialInk) {
     $scope.$parent.clearFabs();
     $timeout(function () {
@@ -113,7 +101,6 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
-
     
 .controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     // Set Header
@@ -142,9 +129,14 @@ angular.module('starter.controllers', [])
 
 .controller('searchCtrl', function ($scope, $stateParams) {
 })
+
+.controller('petProfilesCtrl', function ($scope, $stateParams) {
+})
+
 .controller('petProfileCtrl', function ($scope, $stateParams) {
 })
-.controller('checkListCtrl', function ($scope, $stateParams) {
+
+.controller('tasksCtrl', function ($scope, $stateParams) {
     $scope.checkListItems = [
     { title: 'Feed AM', id: 1 },
     { title: 'Walk AM', id: 2 },
@@ -154,5 +146,20 @@ angular.module('starter.controllers', [])
     { title: 'Fill Water PM', id: 6 }
     ];
 })
-.controller('checkListItemCtrl', function ($scope, $stateParams) {
-});
+
+.controller('taskCtrl', function ($scope, $stateParams) {
+})
+
+.controller('friendsCtrl', function ($scope, $stateParams) {
+    $scope.checkListItems = [
+    { title: 'Feed AM', id: 1 },
+    { title: 'Walk AM', id: 2 },
+    { title: 'Fill Water AM', id: 3 },
+    { title: 'Feed PM', id: 4 },
+    { title: 'Walk PM', id: 5 },
+    { title: 'Fill Water PM', id: 6 }
+    ];
+})
+
+.controller('friendCtrl', function ($scope, $stateParams) {
+})

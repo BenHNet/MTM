@@ -29,12 +29,32 @@ angular.module('starter', ['ionic', 'ionic-material', 'starter.controllers', 'io
 
     $stateProvider
 
-      .state('app', {
-          url: '/app',
-          abstract: true,
-          templateUrl: 'templates/menu.html',
-          controller: 'AppCtrl'
-      })
+    .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'AppCtrl'
+    })
+
+    .state('app.login', {
+        url: '/login',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/login.html',
+                controller: 'LoginCtrl'
+            }
+        }
+    })
+
+    .state('app.profile', {
+        url: '/profile',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/profile.html',
+                controller: 'ProfileCtrl'
+            }
+        }
+    })
 
     .state('app.search', {
         url: '/search',
@@ -66,46 +86,42 @@ angular.module('starter', ['ionic', 'ionic-material', 'starter.controllers', 'io
         }
     })
 
-      .state('app.tasks', {
-          url: '/checkList/:petProfileId',
-          views: {
-              'menuContent': {
-                  templateUrl: 'templates/checkList.html',
-                  controller: 'checkListCtrl'
-              }
-          }
-      })
-
-        .state('app.task', {
-            url: '/checkList/:checkListItemId',
-            views: {
-                'menuContent': {
-                    templateUrl: 'templates/checkListITem.html',
-                    controller: 'checkListItemCtrl'
-                }
-            }
-        })
-
-
-    .state('app.login', {
-        url: '/login',
+    .state('app.tasks', {
+        url: '/tasks',
         views: {
             'menuContent': {
-                templateUrl: 'templates/login.html',
-                controller: 'LoginCtrl'
-            },
-            'fabContent': {
-                template: ''
+                templateUrl: 'templates/tasks.html',
+                controller: 'tasksCtrl'
             }
         }
     })
 
-    .state('app.profile', {
-        url: '/profile',
+    .state('app.task', {
+        url: '/tasks/:taskId',
         views: {
             'menuContent': {
-                templateUrl: 'templates/profile.html',
-                controller: 'ProfileCtrl'
+                templateUrl: 'templates/task.html',
+                controller: 'taskCtrl'
+            }
+        }
+    })
+
+    .state('app.friends', {
+        url: '/friends',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/friends.html',
+                controller: 'friendsCtrl'
+            }
+        }
+    })
+
+    .state('app.friend', {
+        url: '/friends/:friendId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/friend.html',
+                controller: 'friendCtrl'
             }
         }
     });
