@@ -46,6 +46,16 @@ angular.module('starter', ['ionic', 'ionic-material', 'starter.controllers', 'io
         }
     })
 
+    .state('app.home', {
+        url: '/home',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/home.html',
+                controller: 'HomeCtrl'
+            }
+        }
+    })
+
     .state('app.profile', {
         url: '/profile',
         views: {
@@ -72,6 +82,14 @@ angular.module('starter', ['ionic', 'ionic-material', 'starter.controllers', 'io
             'menuContent': {
                 templateUrl: 'templates/petProfiles.html',
                 controller: 'petProfilesCtrl'
+            }
+        },
+        'fabContent': {
+            template: '<button id="fab-gallery" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',
+            controller: function ($timeout) {
+                $timeout(function () {
+                    document.getElementById('fab-gallery').classList.toggle('on');
+                }, 600);
             }
         }
     })
