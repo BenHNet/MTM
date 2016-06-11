@@ -87,3 +87,20 @@ p {
 .blue-bg{    
     background-color: #091A52;
 }
+
+.col-45 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 45%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 45%;
+    -ms-flex: 0 0 45%;
+    flex: 0 0 45%;
+    max-width: 45%;
+}
+
+.list .card.card-gallery {
+    margin: 5px 0 5px 13px;
+    border-radius: 10px;
+}
+
+

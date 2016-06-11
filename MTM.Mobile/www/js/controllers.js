@@ -1,12 +1,12 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope) {
+.controller('AppCtrl', function ($scope) {
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
+    // With the new view caching in Ionic, Controllers are only called
+    // when they are recreated or on app start, instead of every page change.
+    // To listen for when this page is active (for example, to refresh data),
+    // listen for the $ionicView.enter event:
+    //$scope.$on('$ionicView.enter', function(e) {
     //});
 
 
@@ -101,8 +101,8 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 })
-    
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+
+.controller('ProfileCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -111,13 +111,13 @@ angular.module('starter.controllers', [])
     $scope.$parent.setHeaderFab(false);
 
     // Set Motion
-    $timeout(function() {
+    $timeout(function () {
         ionicMaterialMotion.slideUp({
             selector: '.slide-up'
         });
     }, 300);
 
-    $timeout(function() {
+    $timeout(function () {
         ionicMaterialMotion.fadeSlideInRight({
             startVelocity: 3000
         });
@@ -150,6 +150,8 @@ angular.module('starter.controllers', [])
 
     // Set Ink
     ionicMaterialInk.displayEffect();
+
+    $scope.allPets = sampleData.allPets;
 })
 
 .controller('searchCtrl', function ($scope, $stateParams) {
@@ -162,6 +164,13 @@ angular.module('starter.controllers', [])
     $scope.isExpanded = true;
     $scope.$parent.setExpanded(true);
     $scope.$parent.setHeaderFab(false);
+    
+    $timeout(function () {
+        ionicMaterialMotion.fadeSlideInRight({
+            selector: '.animate-fade-slide-in .item',
+            startVelocity: 3000
+        });
+    }, 700);
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
@@ -169,9 +178,8 @@ angular.module('starter.controllers', [])
     ionicMaterialMotion.pushDown({
         selector: '.push-down'
     });
-    ionicMaterialMotion.fadeSlideInRight({
-        selector: '.animate-fade-slide-in .item'
-    });
+
+    $scope.allPets = sampleData.allPets;
 
 })
 
@@ -179,14 +187,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('tasksCtrl', function ($scope, $stateParams) {
-    $scope.checkListItems = [
-    { title: 'Feed AM', id: 1 },
-    { title: 'Walk AM', id: 2 },
-    { title: 'Fill Water AM', id: 3 },
-    { title: 'Feed PM', id: 4 },
-    { title: 'Walk PM', id: 5 },
-    { title: 'Fill Water PM', id: 6 }
-    ];
+    $scope.tasks = sampleData.tasks;
 })
 
 .controller('taskCtrl', function ($scope, $stateParams) {
@@ -204,4 +205,4 @@ angular.module('starter.controllers', [])
 })
 
 .controller('friendCtrl', function ($scope, $stateParams) {
-})
+});

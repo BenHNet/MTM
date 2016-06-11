@@ -1,10 +1,10 @@
 <ion-view view-title="Pet Profiles">
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
-        <div class="list half">
-            <div ui-sref="app.petProfile" class="card card-gallery item item-text-wrap">
+        <div class="list">
+            <div data-ng-repeat="pet in allPets | orderBy:'active':true" ui-sref="app.petProfile" class="card card-gallery item item-text-wrap col-45">
                 <div class="ink dark-bg blue-bg">
-                    <h2>Kona</h2>
-                    <img class="full-image" src="img/Kona.jpg">
+                    <h2>{{pet.petName}}</h2>
+                    <img class="full-image" ng-src="{{pet.petPhoto}}">
                 </div>
                 <div class="tabs tabs-dark tabs-icon-top static">
                     <a ui-sref="app.petProfiles" class="tab-item">
@@ -14,93 +14,7 @@
                         <i class="icon ion-checkmark-circled"></i>Tasks
                     </a>
                 </div>                
-            </div>
-            <div ui-sref="app.petProfile" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg blue-bg">
-                    <h2>R2-D2</h2>
-                    <img class="full-image" src="img/R2-D2.jpg">
-                </div>
-                <div class="tabs tabs-dark tabs-icon-top static">
-                    <a ui-sref="app.petProfiles" class="tab-item">
-                        <i class="icon material-icons">create</i>Edit
-                    </a>
-                    <a ui-sref="app.tasks" class="tab-item">
-                        <i class="icon ion-checkmark-circled"></i>Tasks
-                    </a>
-                </div>
-            </div>
-            <div ui-sref="app.petProfile" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg blue-bg">
-                    <h2>Spike</h2>
-                    <img class="full-image" src="img/Spike.jpg">
-                </div>
-                <div class="tabs tabs-dark tabs-icon-top static">
-                    <a ui-sref="app.petProfiles" class="tab-item">
-                        <i class="icon material-icons">create</i>Edit
-                    </a>
-                    <a ui-sref="app.tasks" class="tab-item">
-                        <i class="icon ion-checkmark-circled"></i>Tasks
-                    </a>
-                </div>
-            </div>
-            <div ui-sref="app.petProfile" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg blue-bg">
-                    <h2>BB-8</h2>
-                    <img class="full-image" src="img/bb-8.jpg">
-                </div>
-                <div class="tabs tabs-dark tabs-icon-top static">
-                    <a ui-sref="app.petProfiles" class="tab-item">
-                        <i class="icon material-icons">create</i>Edit
-                    </a>
-                    <a ui-sref="app.tasks" class="tab-item">
-                        <i class="icon ion-checkmark-circled"></i>Tasks
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="list half">
-            <div ui-sref="app.petProfile" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg blue-bg">
-                    <h2>Lassie</h2>
-                    <img class="full-image" src="img/Lassie.jpg">
-                </div>
-                <div class="tabs tabs-dark tabs-icon-top static">
-                    <a ui-sref="app.petProfiles" class="tab-item">
-                        <i class="icon material-icons">create</i>Edit
-                    </a>
-                    <a ui-sref="app.tasks" class="tab-item">
-                        <i class="icon ion-checkmark-circled"></i>Tasks
-                    </a>
-                </div>
-            </div>
-            <div ui-sref="app.petProfile" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg blue-bg">
-                    <h2>Fido</h2>
-                    <img class="full-image" src="img/Fido.jpg">
-                </div>
-                <div class="tabs tabs-dark tabs-icon-top static">
-                    <a ui-sref="app.petProfiles" class="tab-item">
-                        <i class="icon material-icons">create</i>Edit
-                    </a>
-                    <a ui-sref="app.tasks" class="tab-item">
-                        <i class="icon ion-checkmark-circled"></i>Tasks
-                    </a>
-                </div>
-            </div>
-            <div ui-sref="app.petProfile" class="card card-gallery item item-text-wrap">
-                <div class="ink dark-bg blue-bg">
-                    <h2>Garfield</h2>
-                    <img class="full-image" src="img/Garfield.jpg">
-                </div>
-                <div class="tabs tabs-dark tabs-icon-top static">
-                    <a ui-sref="app.petProfiles" class="tab-item">
-                        <i class="icon material-icons">create</i>Edit
-                    </a>
-                    <a ui-sref="app.tasks" class="tab-item">
-                        <i class="icon ion-checkmark-circled"></i>Tasks
-                    </a>
-                </div>
-            </div>
-        </div>
+            </div>            
+        </div>       
     </ion-content>
 </ion-view>
