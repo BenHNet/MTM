@@ -151,19 +151,13 @@ angular.module('starter.controllers', [])
     // Set Ink
     ionicMaterialInk.displayEffect();
 
-    $scope.allPets = sampleData.allPets;
+    $scope.pets = sampleData.pets;
 })
 
 .controller('searchCtrl', function ($scope, $stateParams) {
 })
 
 .controller('petProfilesCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
-    $scope.$parent.setHeaderFab(false);
     
     $timeout(function () {
         ionicMaterialMotion.fadeSlideInRight({
@@ -172,36 +166,59 @@ angular.module('starter.controllers', [])
         });
     }, 700);
 
-    // Activate ink for controller
-    ionicMaterialInk.displayEffect();
-
     ionicMaterialMotion.pushDown({
         selector: '.push-down'
     });
 
-    $scope.allPets = sampleData.allPets;
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+
+    $scope.pets = sampleData.pets;
 
 })
 
 .controller('petProfileCtrl', function ($scope, $stateParams) {
 })
 
-.controller('tasksCtrl', function ($scope, $stateParams) {
+.controller('tasksCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+
+    $timeout(function () {
+        ionicMaterialMotion.fadeSlideInRight({
+            selector: '.animate-fade-slide-in .item',
+            startVelocity: 3000
+        });
+    }, 700);
+
+    ionicMaterialMotion.pushDown({
+        selector: '.push-down'
+    });
+
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+
     $scope.tasks = sampleData.tasks;
 })
 
 .controller('taskCtrl', function ($scope, $stateParams) {
 })
 
-.controller('friendsCtrl', function ($scope, $stateParams) {
-    $scope.checkListItems = [
-    { title: 'Feed AM', id: 1 },
-    { title: 'Walk AM', id: 2 },
-    { title: 'Fill Water AM', id: 3 },
-    { title: 'Feed PM', id: 4 },
-    { title: 'Walk PM', id: 5 },
-    { title: 'Fill Water PM', id: 6 }
-    ];
+.controller('friendsCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+
+    $timeout(function () {
+        ionicMaterialMotion.fadeSlideInRight({
+            selector: '.animate-fade-slide-in .item',
+            startVelocity: 3000
+        });
+    }, 700);
+
+    ionicMaterialMotion.pushDown({
+        selector: '.push-down'
+    });
+
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+
+    $scope.friends = sampleData.friends;
 })
 
 .controller('friendCtrl', function ($scope, $stateParams) {

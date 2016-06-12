@@ -115,7 +115,7 @@ angular.module('starter', ['ionic', 'ionic-material', 'starter.controllers', 'io
     })
 
     .state('app.task', {
-        url: '/tasks/:taskId',
+        url: '/tasks/:Id',
         views: {
             'menuContent': {
                 templateUrl: 'templates/task.html',

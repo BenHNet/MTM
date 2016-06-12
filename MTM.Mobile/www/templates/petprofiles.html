@@ -1,10 +1,10 @@
 <ion-view view-title="Pet Profiles">
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
         <div class="list">
-            <div data-ng-repeat="pet in allPets | orderBy:'active':true" ui-sref="app.petProfile" class="card card-gallery item item-text-wrap col-45">
+            <div data-ng-repeat="pet in pets | orderBy:'active':true" ui-sref="app.petProfile" class="card card-gallery item item-text-wrap col-45">
                 <div class="ink dark-bg blue-bg">
-                    <h2>{{pet.petName}}</h2>
-                    <img class="full-image" ng-src="{{pet.petPhoto}}">
+                    <h2>{{pet.Name}}</h2>
+                    <img class="full-image" ng-src="{{pet.Photo}}">
                 </div>
                 <div class="tabs tabs-dark tabs-icon-top static">
                     <a ui-sref="app.petProfiles" class="tab-item">

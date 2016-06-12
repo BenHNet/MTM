@@ -1,23 +1,32 @@
 ﻿var sampleData = (function () {
     var returnObj = {};
 
-    returnObj.allPets = [
-        { petId: 1, petName: 'Kona', petDescription: 'Cutest Puppy Alive', petPhoto: 'img/Kona.jpg', active: 1 },
-        { petId: 2, petName: 'Spike', petDescription: 'Loves Tom and Jerry', petPhoto: 'img/Spike.jpg', active: 1 },
-        { petId: 3, petName: 'R2-D2', petDescription: 'Pal of C-3PO', petPhoto: 'img/R2-D2.jpg', active: 0 },
-        { petId: 4, petName: 'Lassie', petDescription: 'Smart Cookie', petPhoto: 'img/Lassie.jpg', active: 0 },
-        { petId: 5, petName: 'Fido', petDescription: '', petPhoto: 'img/Fido.jpg', active: 0 },
-        { petId: 6, petName: 'Garfield', petDescription: '', petPhoto: 'img/Garfield.jpg', active: 1 },
-        { petId: 7, petName: 'BB-8', petDescription: '', petPhoto: 'img/BB-8.jpg', active: 0 }
+    returnObj.pets = [
+        { Id: 1, Name: 'Kona', Description: 'Cutest Puppy Alive', Photo: 'img/Kona.jpg', active: 1 },
+        { Id: 2, Name: 'Spike', Description: 'Loves Tom and Jerry', Photo: 'img/Spike.jpg', active: 1 },
+        { Id: 3, Name: 'R2-D2', Description: 'Pal of C-3PO', Photo: 'img/R2-D2.jpg', active: 0 },
+        { Id: 4, Name: 'Lassie', Description: 'Smart Cookie', Photo: 'img/Lassie.jpg', active: 0 },
+        { Id: 5, Name: 'Fido', Description: 'Mean and Nasty', Photo: 'img/Fido.jpg', active: 0 },
+        { Id: 6, Name: 'Garfield', Description: 'Hates Mondays', Photo: 'img/Garfield.jpg', active: 1 },
+        { Id: 7, Name: 'BB-8', Description: 'Cute little guy', Photo: 'img/BB-8.jpg', active: 0 }
     ];
 
     returnObj.tasks = [
-        { taskId: 1, taskTitle: 'Feed AM' },
-        { taskId: 2, taskTitle: 'Walk AM' },
-        { taskId: 3, Title: 'Fill Water AM' },
-        { taskId: 4, Title: 'Feed PM' },
-        { taskId: 5, Title: 'Walk PM' },
-        { taskId: 6, Title: 'Fill Water PM', }
+        { Id: 1, Title: 'Feed AM', Pet: { Id: 1, Name: 'Kona', Description: 'Cutest Puppy Alive', Photo: 'img/Kona.jpg', active: 1 } },
+        { Id: 2, Title: 'Walk AM', Pet: { Id: 2, Name: 'Spike', Description: 'Loves Tom and Jerry', Photo: 'img/Spike.jpg', active: 1 } },
+        { Id: 3, Title: 'Fill Water AM', Pet: { Id: 1, Name: 'Kona', Description: 'Cutest Puppy Alive', Photo: 'img/Kona.jpg', active: 1 } },
+        { Id: 4, Title: 'Feed PM', Pet: { Id: 1, Name: 'Kona', Description: 'Cutest Puppy Alive', Photo: 'img/Kona.jpg', active: 1 } },
+        { Id: 5, Title: 'Walk PM', Pet: { Id: 2, Name: 'Spike', Description: 'Loves Tom and Jerry', Photo: 'img/Spike.jpg', active: 1 } },
+        { Id: 6, Title: 'Fill Water PM', Pet: { Id: 1, Name: 'Kona', Description: 'Cutest Puppy Alive', Photo: 'img/Kona.jpg', active: 1 }}
+    ];
+    
+    returnObj.friends = [
+        { Id: 2, Name: 'Ike', Description: 'Spike\'s Owner', Photo: 'img/ike.jpg', active: 1 },
+        { Id: 3, Name: 'C-3PO', Description: 'R2-D2\'s Owner', Photo: 'img/c-3po.jpg', active: 0 },
+        { Id: 4, Name: 'Timmy', Description: 'Lassie saves him', Photo: 'img/timmy.jpg', active: 0 },
+        { Id: 5, Name: 'Mylo', Description: 'Owner of Fido', Photo: 'img/user.jpg', active: 0 },
+        { Id: 6, Name: 'Jon', Description: 'Overfeeds his cat', Photo: 'img/jon.jpg', active: 1 },
+        { Id: 7, Name: 'Poe', Description: 'Best pilot in the resistance', Photo: 'img/poe.jpg', active: 0 }
     ];
 
     return returnObj;

@@ -20,10 +20,10 @@
         </div>
         <h4 class="content padding double-padding-x">Active Pets</h4>
         <div class="list animate-fade-slide-in-right">
-            <a data-ng-repeat="pet in allPets | filter:{ active: 1 }" ui-sref="app.petProfile" class="item item-avatar">
-                <img ng-src="{{pet.petPhoto}}">
-                <h2>{{pet.petName}}</h2>
-                <p>{{pet.petDescription}}</p>
+            <a data-ng-repeat="pet in pets | filter:{ active: 1 }" ui-sref="app.petProfile" class="item item-avatar">
+                <img ng-src="{{pet.Photo}}">
+                <h2>{{pet.Name}}</h2>
+                <p>{{pet.Description}}</p>
             </a>            
         </div>
     </ion-content>
