@@ -76,30 +76,30 @@ angular.module('starter', ['ionic', 'ionic-material', 'starter.controllers', 'io
         }
     })
 
-    .state('app.petProfiles', {
-        url: '/petProfiles',
+    .state('app.pets', {
+        url: '/pets',
         views: {
             'menuContent': {
-                templateUrl: 'templates/petProfiles.html',
-                controller: 'petProfilesCtrl'
-            }
-        },
-        'fabContent': {
-            template: '<button id="fab-gallery" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',
-            controller: function ($timeout) {
-                $timeout(function () {
-                    document.getElementById('fab-gallery').classList.toggle('on');
-                }, 600);
+                templateUrl: 'templates/pets.html',
+                controller: 'petsCtrl'
+            },
+            'fabContent': {
+                template: '<button id="fab-pets" onClick="utilities.addPhoto();" class="button button-fab button-fab-top-left expanded button-energized-900 spin"><i class="icon ion-plus-round"></i></button>',
+                controller: function ($timeout) {
+                    $timeout(function () {
+                        document.getElementById('fab-pets').classList.toggle('on');
+                    }, 900);
+                }
             }
         }
     })
 
-    .state('app.petProfile', {
-        url: '/petProfiles/:petProfileId',
+    .state('app.pet', {
+        url: '/pets/:petId',
         views: {
             'menuContent': {
-                templateUrl: 'templates/petProfile.html',
-                controller: 'petProfileCtrl'
+                templateUrl: 'templates/pet.html',
+                controller: 'petCtrl'
             }
         }
     })
@@ -110,6 +110,14 @@ angular.module('starter', ['ionic', 'ionic-material', 'starter.controllers', 'io
             'menuContent': {
                 templateUrl: 'templates/tasks.html',
                 controller: 'tasksCtrl'
+            },
+            'fabContent': {
+                template: '<button id="fab-tasks" class="button button-fab button-fab-top-left expanded button-energized-900 spin"><i class="icon ion-plus-round"></i></button>',
+                controller: function ($timeout) {
+                    $timeout(function () {
+                        document.getElementById('fab-tasks').classList.toggle('on');
+                    }, 900);
+                }
             }
         }
     })
@@ -123,13 +131,21 @@ angular.module('starter', ['ionic', 'ionic-material', 'starter.controllers', 'io
             }
         }
     })
-
+                
     .state('app.friends', {
         url: '/friends',
         views: {
             'menuContent': {
                 templateUrl: 'templates/friends.html',
                 controller: 'friendsCtrl'
+            },
+            'fabContent': {
+            template: '<button id="fab-friends" onClick="utilities.addContact();" class="button button-fab button-fab-top-left expanded button-energized-900 spin"><i class="icon ion-plus-round"></i></button>',
+                controller: function ($timeout) {
+                    $timeout(function () {
+                        document.getElementById('fab-friends').classList.toggle('on');
+                    }, 900);
+                }
             }
         }
     })

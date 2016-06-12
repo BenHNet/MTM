@@ -92,6 +92,13 @@ angular.module('starter.controllers', [])
         }
     };
 
+    $scope.clearFabsForHome = function () {
+        var fabs = document.getElementsByClassName('button-fab');
+        if (fabs.length && fabs.length > 0) {
+            fabs[0].remove();
+        }
+    };
+
 })
 
 .controller('LoginCtrl', function ($scope, $timeout, $stateParams, ionicMaterialInk) {
@@ -128,9 +135,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('HomeCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+
     // Set Header
     $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
+    $scope.$parent.clearFabsForHome();
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
@@ -157,30 +165,44 @@ angular.module('starter.controllers', [])
 .controller('searchCtrl', function ($scope, $stateParams) {
 })
 
-.controller('petProfilesCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('petsCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     
+    //// Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = true;
+    $scope.$parent.setExpanded(true);
+    $scope.$parent.setHeaderFab('left');
+
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+        
     $timeout(function () {
         ionicMaterialMotion.fadeSlideInRight({
             selector: '.animate-fade-slide-in .item',
             startVelocity: 3000
         });
     }, 700);
-
-    ionicMaterialMotion.pushDown({
-        selector: '.push-down'
-    });
-
-    // Activate ink for controller
-    ionicMaterialInk.displayEffect();
 
     $scope.pets = sampleData.pets;
 
 })
 
-.controller('petProfileCtrl', function ($scope, $stateParams) {
+.controller('petCtrl', function ($scope, $stateParams) {
 })
 
 .controller('tasksCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+
+    // Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.$parent.setHeaderFab('left');
+
+    // Delay expansion
+    $timeout(function () {
+        $scope.isExpanded = true;
+        $scope.$parent.setExpanded(true);
+    }, 300);
 
     $timeout(function () {
         ionicMaterialMotion.fadeSlideInRight({
@@ -188,10 +210,6 @@ angular.module('starter.controllers', [])
             startVelocity: 3000
         });
     }, 700);
-
-    ionicMaterialMotion.pushDown({
-        selector: '.push-down'
-    });
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
@@ -204,16 +222,23 @@ angular.module('starter.controllers', [])
 
 .controller('friendsCtrl', function ($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
 
+    // Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.$parent.setHeaderFab('left');
+
+    // Delay expansion
+    $timeout(function () {
+        $scope.isExpanded = true;
+        $scope.$parent.setExpanded(true);
+    }, 300);
+
     $timeout(function () {
         ionicMaterialMotion.fadeSlideInRight({
             selector: '.animate-fade-slide-in .item',
             startVelocity: 3000
         });
     }, 700);
-
-    ionicMaterialMotion.pushDown({
-        selector: '.push-down'
-    });
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();

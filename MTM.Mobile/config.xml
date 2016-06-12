@@ -23,4 +23,6 @@
   <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
   <plugin name="cordova-plugin-statusbar" spec="~2.1.0" />
   <plugin name="ionic-plugin-keyboard" spec="~1.0.8" />
+  <plugin name="cordova-plugin-contacts" version="2.0.1" />
+  <plugin name="cordova-plugin-camera" version="2.1.1" />
 </widget>

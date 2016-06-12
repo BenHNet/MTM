@@ -21,6 +21,12 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.ionicsidemenu"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.ionicframework.ionicsidemenu"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.mtm.mobile"
         }
     },
     "dependent_plugins": {}
