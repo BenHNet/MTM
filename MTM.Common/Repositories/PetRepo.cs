@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq;
 using MTM.Models.Models;
 using Dapper;
-using Dapper.Contrib;
+using Dapper.Contrib.Extensions;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -20,14 +20,32 @@ namespace MTM.Common.Repositories
             this._connectionString = connection;
         }
 
-        public IQueryable<Pet> Create(Pet Entity)
+        public Pet Create(Pet Entity)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                //Setup a few of the defaults
+                Entity.Active = true;
+                Entity.CreatedDate = DateTime.Now;
+                Entity.ModifiedDate = DateTime.Now;
+                Entity.ModifiedBy = Guid.NewGuid();
+
+                connection.Insert<Pet>(Entity);
+
+                return Entity;
+            }
         }
 
-        public IQueryable<Pet> Delete(Pet Entity)
+        public int Delete(Guid Id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                return connection.Execute("Delete from Pet where id = {0}", Id);
+            }
         }
 
         public IQueryable<Pet> GetAll()
@@ -40,14 +58,30 @@ namespace MTM.Common.Repositories
             }
         }
 
-        public IQueryable<Pet> GetById(Guid Id)
+        public Pet GetById(Guid Id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                return connection.Query<Pet>("Select * from Pet where id = {0}", Id).FirstOrDefault();
+            }
         }
 
-        public IQueryable<Pet> Update(Pet Entity)
+        public Pet Update(Pet Entity)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                //Setup a few of the defaults
+                Entity.ModifiedDate = DateTime.Now;
+                Entity.ModifiedBy = Guid.NewGuid();
+
+                connection.Update<Pet>(Entity);
+
+                return Entity;
+            }
         }
     }
 }

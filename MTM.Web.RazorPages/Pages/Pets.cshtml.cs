@@ -17,7 +17,7 @@ namespace MTM.Web.RazorPages.Pages
         public List<Pet> MyPets;
 
         [BindProperty]
-        public Pet Input { get; set; }
+        public Pet PetInput { get; set; }
 
         public PetsModel(IConfiguration config) {
             _repo = new PetRepo(config.GetConnectionString("DefaultConnection"));
@@ -28,14 +28,26 @@ namespace MTM.Web.RazorPages.Pages
             MyPets = _repo.GetAll().ToList();
         }
 
-        public async Task<IActionResult> OnCreateOrUpdateAsync()
+        public IActionResult OnPostCreateOrUpdate()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            return Page();
+            _repo.Update(PetInput);
+
+            return RedirectToPage("/Pets");
+        }
+        
+        public IActionResult OnPostDelete()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            return RedirectToPage("/Pets");
         }
     }
 }

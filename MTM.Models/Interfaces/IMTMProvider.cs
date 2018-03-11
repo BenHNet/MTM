@@ -9,12 +9,12 @@ namespace MTM.Models.Interfaces
     {
         IQueryable<T> GetAll();
 
-        IQueryable<T> GetById(Guid Id);
+        T GetById(Guid Id);
 
-        IQueryable<T> Create(T Entity);
+        T Create(T Entity);
 
-        IQueryable<T> Update(T Entity);
+        T Update(T Entity);
 
-        IQueryable<T> Delete(T Entity);
+        int Delete(Guid Id);
     }
 }
