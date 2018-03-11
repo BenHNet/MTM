@@ -1,0 +1,137 @@
+Start by showing them around the current solution and how the logins and identities work
+Notice the similarities to MVC
+
+1. Add security and extra fields to the layout
+
+	@if (SignInManager.IsSignedIn(User))
+	{
+	<ul class="nav navbar-nav">
+		<li><a asp-page="/Index">Home</a></li>
+		<li><a asp-page="/Pets">Pets</a></li>
+		<li><a asp-page="/Friends">Friends</a></li>
+		<li><a asp-page="/About">About</a></li>
+		<li><a asp-page="/Contact">Contact</a></li>
+	</ul>
+	}
+	else
+	{
+		<ul class="nav navbar-nav">
+			<li><a asp-page="/Index">Home</a></li>
+			<li><a asp-page="/About">About</a></li>
+			<li><a asp-page="/Contact">Contact</a></li>
+		</ul>
+	}
+
+2. Add the pets page
+
+3.Update Product.cs with the following:
+
+	using Lucene.Net.Analysis.Standard;
+	using Lucene.Net.Linq.Mapping;
+
+	[NumericField]
+	public int ProductId { get; set; }
+
+	[Field(Analyzer = typeof(StandardAnalyzer))]
+	public string ProductNumber { get; set; }
+
+	[Field(Analyzer = typeof(StandardAnalyzer))]
+	public string Name { get; set; }
+
+	[Field(Analyzer = typeof(StandardAnalyzer))]
+	public string Description { get; set; }
+
+	[Field(Analyzer = typeof(StandardAnalyzer))]
+	public string Color { get; set; }
+
+	[Field(Analyzer = typeof(StandardAnalyzer))]
+	public string Size { get; set; }
+
+	[Field(Analyzer = typeof(StandardAnalyzer))]
+	public string Weight { get; set; }
+
+	[Field(Analyzer = typeof(StandardAnalyzer))]
+	public decimal ListPrice { get; set; }
+
+	[NumericField]
+	public int ProductSubcategoryID { get; set; }
+
+	[IgnoreField]
+	public SubCategory SubCategory { get; set; }
+
+	[NumericField]
+	public int ProductModelID { get; set; }
+
+	[IgnoreField]
+	public Model Model { get; set; }
+
+4. Add these to the Constants.cs:
+
+    public static string IndexPath = "";
+
+    public static bool CategoriesAreIndexed = false;
+
+    public static bool SubCategoriesAreIndexed = false;
+
+    public static bool ModelsAreIndexed = false;
+
+    public static bool ProductsAreIndexed = false;
+
+	public static LuceneDataProvider ProductProvider = new LuceneDataProvider(new RAMDirectory(), Lucene.Net.Util.Version.LUCENE_30);
+
+5. Change the FillProducts method in the ProductQueries.cs file:
+
+    public static IQueryable<Product> FillProducts()
+    {
+        IQueryable<Product> products;
+
+        if (!Constants.ProductsAreIndexed)
+        {
+            using (var sqlConnection =
+            new SqlConnection(Constants.ConnectionString))
+            {
+                sqlConnection.Open();
+
+
+                products = sqlConnection.Query<Product, Model, SubCategory, Category, Product>(string.Format("Select {0} from {1}",
+                                        Constants.ProductFields, Constants.ProductJoin), (prod, model, subCat, cat) =>
+                                        {
+                                            prod.Model = model;
+                                            prod.SubCategory = subCat;
+                                            subCat.Category = cat;
+                                            return prod;
+                                        },
+                                        splitOn: "ProductModelID, ProductSubcategoryID, ProductCategoryID"
+                                        ).AsQueryable();
+
+                sqlConnection.Close();
+            }
+                
+            using (var session = Constants.ProductProvider.OpenSession<Product>())
+            {
+                session.DeleteAll();
+
+                foreach (var product in products)
+                {
+                    session.Add(product);
+                }
+
+            }
+
+            Constants.ProductsAreIndexed = true;
+        }
+        else
+        {
+            products = Constants.ProductProvider.AsQueryable<Product>();
+        }
+
+        return products;
+    }
+
+6. Run the Products API method again.
+
+7. Show the completed Solution for these things
+	- Sub Cat and Model on product is null.  How do we fix that?
+	- The need for the session factory
+	- Admin method to reset the indexes
+

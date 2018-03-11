@@ -1,0 +1,17 @@
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Web.RazorPages.deps.json
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Web.RazorPages.runtimeconfig.json
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Web.RazorPages.runtimeconfig.dev.json
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Web.RazorPages.dll
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Web.RazorPages.pdb
+C:\Dev\MTM\src\MTM.Web.RazorPages\obj\Debug\netcoreapp2.0\MTM.Web.RazorPages.csprojResolveAssemblyReference.cache
+C:\Dev\MTM\src\MTM.Web.RazorPages\obj\Debug\netcoreapp2.0\MTM.Web.RazorPages.csproj.CoreCompileInputs.cache
+C:\Dev\MTM\src\MTM.Web.RazorPages\obj\Debug\netcoreapp2.0\MTM.Web.RazorPages.AssemblyInfoInputs.cache
+C:\Dev\MTM\src\MTM.Web.RazorPages\obj\Debug\netcoreapp2.0\MTM.Web.RazorPages.AssemblyInfo.cs
+C:\Dev\MTM\src\MTM.Web.RazorPages\obj\Debug\netcoreapp2.0\MTM.Web.RazorPages.dll
+C:\Dev\MTM\src\MTM.Web.RazorPages\obj\Debug\netcoreapp2.0\MTM.Web.RazorPages.pdb
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Common.dll
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Models.dll
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Common.pdb
+C:\Dev\MTM\src\MTM.Web.RazorPages\bin\Debug\netcoreapp2.0\MTM.Models.pdb
+C:\Dev\MTM\src\MTM.Web.RazorPages\obj\Debug\netcoreapp2.0\MTM.Web.RazorPages.csproj.CopyComplete
+C:\Dev\MTM\src\MTM.Web.RazorPages\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

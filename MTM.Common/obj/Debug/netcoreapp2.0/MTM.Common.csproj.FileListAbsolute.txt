@@ -1,0 +1,12 @@
+C:\Dev\MTM\src\MTM.Common\bin\Debug\netcoreapp2.0\MTM.Models.dll
+C:\Dev\MTM\src\MTM.Common\obj\Debug\netcoreapp2.0\MTM.Common.csprojResolveAssemblyReference.cache
+C:\Dev\MTM\src\MTM.Common\obj\Debug\netcoreapp2.0\MTM.Common.csproj.CoreCompileInputs.cache
+C:\Dev\MTM\src\MTM.Common\obj\Debug\netcoreapp2.0\MTM.Common.AssemblyInfoInputs.cache
+C:\Dev\MTM\src\MTM.Common\obj\Debug\netcoreapp2.0\MTM.Common.AssemblyInfo.cs
+C:\Dev\MTM\src\MTM.Common\bin\Debug\netcoreapp2.0\MTM.Common.deps.json
+C:\Dev\MTM\src\MTM.Common\bin\Debug\netcoreapp2.0\MTM.Common.dll
+C:\Dev\MTM\src\MTM.Common\bin\Debug\netcoreapp2.0\MTM.Common.pdb
+C:\Dev\MTM\src\MTM.Common\bin\Debug\netcoreapp2.0\MTM.Models.pdb
+C:\Dev\MTM\src\MTM.Common\obj\Debug\netcoreapp2.0\MTM.Common.csproj.CopyComplete
+C:\Dev\MTM\src\MTM.Common\obj\Debug\netcoreapp2.0\MTM.Common.dll
+C:\Dev\MTM\src\MTM.Common\obj\Debug\netcoreapp2.0\MTM.Common.pdb

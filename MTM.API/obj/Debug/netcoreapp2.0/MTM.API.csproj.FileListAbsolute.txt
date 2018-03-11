@@ -1,0 +1,11 @@
+C:\Dev\MTM\src\MTM.API\bin\Debug\netcoreapp2.0\MTM.API.deps.json
+C:\Dev\MTM\src\MTM.API\bin\Debug\netcoreapp2.0\MTM.API.runtimeconfig.json
+C:\Dev\MTM\src\MTM.API\bin\Debug\netcoreapp2.0\MTM.API.runtimeconfig.dev.json
+C:\Dev\MTM\src\MTM.API\bin\Debug\netcoreapp2.0\MTM.API.dll
+C:\Dev\MTM\src\MTM.API\bin\Debug\netcoreapp2.0\MTM.API.pdb
+C:\Dev\MTM\src\MTM.API\obj\Debug\netcoreapp2.0\MTM.API.csproj.CoreCompileInputs.cache
+C:\Dev\MTM\src\MTM.API\obj\Debug\netcoreapp2.0\MTM.API.AssemblyInfoInputs.cache
+C:\Dev\MTM\src\MTM.API\obj\Debug\netcoreapp2.0\MTM.API.AssemblyInfo.cs
+C:\Dev\MTM\src\MTM.API\obj\Debug\netcoreapp2.0\MTM.API.dll
+C:\Dev\MTM\src\MTM.API\obj\Debug\netcoreapp2.0\MTM.API.pdb
+C:\Dev\MTM\src\MTM.API\obj\Debug\netcoreapp2.0\MTM.API.csprojResolveAssemblyReference.cache
