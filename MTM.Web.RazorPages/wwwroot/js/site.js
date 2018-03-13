@@ -1,6 +1,22 @@
 ﻿// Write your Javascript code.
 
-function showPet(pet) {
+function showPetCreate() {
+
+    $("#PetId").val('00000000-0000-0000-0000-000000000000');
+    $("#PetActive").val(true);
+    $("#PetCreatedDate").val('01/01/1901');
+    $("#PetName").val('');
+    $("#PetProfile").val('');
+    $("#PhototUrl").val('');
+    $("#dialog-create-update").dialog({
+        height: 355,
+        width: 500,
+        modal: true
+    });
+
+};
+
+function showPetEdit(pet) {
 
     $("#PetId").val(pet.Id);
     $("#PetActive").val(pet.Active);
@@ -18,7 +34,7 @@ function showPet(pet) {
 
 function showPetDelete(pet) {
 
-    $("#PetId").val(pet.Id);
+    $("#PetDeleteId").val(pet.Id);
     $("#PetNameDeleteMsg").text("Are you sure you want to delete " + pet.PetName + "?");
     $("#dialog-delete").dialog({
         height: 135,

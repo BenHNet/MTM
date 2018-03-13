@@ -11,6 +11,7 @@ namespace MTM.Models.Models
     public class Pet : MTMEntityBase, IMTMEntity, IPet
     {
         [Display(Name = "Pet Name")]
+        [Required]
         public string PetName { get; set; }
 
         [Display(Name = "Pet Profile")]

@@ -21,12 +21,14 @@
         http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/themes/smoothness/jquery-ui.css
 
     </environment>
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
 }
 
 <h2>Pets</h2>
 
 <div class="row">
-    @Html.ActionLink("Create New", "Create")
+    <a href="javascript:void(null);" onclick="showPetCreate();">Create New Pet</a>
 </div>
 <div class="row">
 
@@ -43,7 +45,7 @@
                 @item.PetProfile
             </div>
             <div class="col-md-4">
-                <a href="javascript:void(null);" onclick="showPet(@item.AsJson());">Edit</a> |
+                <a href="javascript:void(null);" onclick="showPetEdit(@item.AsJson());">Edit</a> |
                 <a href="javascript:void(null);" onclick="showPetDelete(@item.AsJson());">Delete</a>
             </div>
         </div>
@@ -78,7 +80,7 @@
 
 <div id="dialog-delete" title="Confirm Delete" style="display: none;">
     <form method="post">
-        <input type="hidden" id="PetId" asp-for="PetInput.Id" class="form-control" />
+        <input type="hidden" id="PetDeleteId" asp-for="PetInput.Id" class="form-control" />
         <div class="form-group">
             <label id="PetNameDeleteMsg"></label>
         </div>

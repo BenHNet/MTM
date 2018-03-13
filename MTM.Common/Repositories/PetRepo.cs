@@ -44,7 +44,7 @@ namespace MTM.Common.Repositories
             {
                 connection.Open();
 
-                return connection.Execute("Delete from Pet where id = {0}", Id);
+                return connection.Execute("Delete from Pet where id = @Id", new { Id = Id });
             }
         }
 
@@ -64,7 +64,7 @@ namespace MTM.Common.Repositories
             {
                 connection.Open();
 
-                return connection.Query<Pet>("Select * from Pet where id = {0}", Id).FirstOrDefault();
+                return connection.Query<Pet>("Select * from Pet where id = @Id", new { Id = Id }).FirstOrDefault();
             }
         }
 
