@@ -35,6 +35,7 @@ function showPetEdit(pet) {
 function showPetDelete(pet) {
 
     $("#PetDeleteId").val(pet.Id);
+    $("#PetDeleteName").val(pet.PetName);
     $("#PetNameDeleteMsg").text("Are you sure you want to delete " + pet.PetName + "?");
     $("#dialog-delete").dialog({
         height: 135,
