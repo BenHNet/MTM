@@ -35,7 +35,7 @@
     @foreach (var item in Model.MyPets)
     {
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 @item.PhotoUrl
             </div>
             <div class="col-md-2">
@@ -44,7 +44,7 @@
             <div class="col-md-4">
                 @item.PetProfile
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <a href="javascript:void(null);" onclick="showPetEdit(@item.AsJson());">Edit</a> |
                 <a href="javascript:void(null);" onclick="showPetDelete(@item.AsJson());">Delete</a>
             </div>
