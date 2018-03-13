@@ -54,7 +54,7 @@ namespace MTM.Common.Repositories
             {
                 connection.Open();
 
-                return connection.Query<Pet>("Select * from Pet").AsQueryable();
+                return connection.Query<Pet>("Select * from Pet order by CreatedDate Desc").AsQueryable();
             }
         }
 

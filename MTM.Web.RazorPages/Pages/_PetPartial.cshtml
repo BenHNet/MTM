@@ -1,0 +1,30 @@
+@model MTM.Models.Models.Pet
+
+@*div class="row">
+    <div class="col-md-4">
+        @Model.PhotoUrl
+    </div>
+    <div class="col-md-2">
+        @Model.PetName
+    </div>
+    <div class="col-md-4">
+        @Model.PetProfile
+    </div>
+    <div class="col-md-2">
+        <a href="javascript:void(null);" onclick="showPetEdit(@Model.AsJson());">Edit</a> |
+        <a href="javascript:void(null);" onclick="showPetDelete(@Model.AsJson());">Delete</a>
+    </div>
+</div>*@
+
+<div class="col-xs-12 col-sm-6 col-lg-4 pet-wrapper">
+    <img alt="@Model.PetName" src="@Model.PhotoUrl" data-holder-rendered="true" class="pet-photo">
+
+    <div class="caption">
+        <h4>@Model.PetName</h4>
+        <h4 class="athlete-hometown">@Model.PetProfile</h4>
+    </div>
+    <div>
+        <a href="javascript:void(null);" onclick="showPetEdit(@Model.AsJson());">Edit</a> |
+        <a href="javascript:void(null);" onclick="showPetDelete(@Model.AsJson());">Delete</a>
+    </div>
+</div>

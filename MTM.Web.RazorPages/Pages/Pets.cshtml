@@ -31,24 +31,9 @@
     <a href="javascript:void(null);" onclick="showPetCreate();">Create New Pet</a>
 </div>
 <div class="row">
-
     @foreach (var item in Model.MyPets)
     {
-        <div class="row">
-            <div class="col-md-4">
-                @item.PhotoUrl
-            </div>
-            <div class="col-md-2">
-                @item.PetName
-            </div>
-            <div class="col-md-4">
-                @item.PetProfile
-            </div>
-            <div class="col-md-2">
-                <a href="javascript:void(null);" onclick="showPetEdit(@item.AsJson());">Edit</a> |
-                <a href="javascript:void(null);" onclick="showPetDelete(@item.AsJson());">Delete</a>
-            </div>
-        </div>
+        @await Html.PartialAsync("_PetPartial", item)
     }
 </div>
 
